@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<!-- Created By CodingLab - www.codinglabweb.com -->
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <title>Responsive Registration Form | CodingLab</title>
+    <link rel="stylesheet" href="sign.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <div class="container">
+        <div class="title">Registration</div>
+        <div class="content">
+            <form action="#">
+                <div class="user-details">
+                    <div class="input-box">
+                        <span class="details">Full Name</span>
+                        <input type="text" placeholder="Enter your name" required>
+                    </div>
+                    <div class="input-box">
+                        <span class="details">Username</span>
+                        <input type="text" placeholder="Enter your username" required>
+                    </div>
+                    <div class="input-box">
+                        <span class="details">Email</span>
+                        <input type="text" placeholder="Enter your email" required>
+                    </div>
+                    <div class="input-box">
+                        <span class="details">Phone Number</span>
+                        <input type="text" id="phone-number" placeholder="Enter your number" required>
+                    </div>
+
+                    <!-- OTP Section -->
+                    <div class="otp-box">
+                        <span class="details">Enter OTP</span>
+                        <div class="otp-inputs">
+                            <input type="text" maxlength="1" disabled>
+                            <input type="text" maxlength="1" disabled>
+                            <input type="text" maxlength="1" disabled>
+                            <input type="text" maxlength="1" disabled>
+                        </div>
+                    </div>
+
+                    <div class="input-box">
+                        <span class="details">Password</span>
+                        <input type="password" id="password" placeholder="Enter your password" disabled required>
+                    </div>
+                    <div class="input-box">
+                        <span class="details">Confirm Password</span>
+                        <input type="password" id="confirm-password" placeholder="Confirm your password" disabled required>
+                    </div>
+                </div>
+                
+                <div class="gender-details">
+                    <input type="radio" name="gender" id="dot-1">
+                    <input type="radio" name="gender" id="dot-2">
+                    <input type="radio" name="gender" id="dot-3">
+                    <span class="gender-title">Gender</span>
+                    <div class="category">
+                        <label for="dot-1">
+                            <span class="dot one"></span>
+                            <span class="gender">Male</span>
+                        </label>
+                        <label for="dot-2">
+                            <span class="dot two"></span>
+                            <span class="gender">Female</span>
+                        </label>
+                        <label for="dot-3">
+                            <span class="dot three"></span>
+                            <span class="gender">Prefer not to say</span>
+                        </label>
+                    </div>
+                </div>
+                
+                <div class="button">
+                    <input type="submit" value="Register" disabled>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- JavaScript for OTP handling -->
+    <script>
+        const inputs = document.querySelectorAll(".otp-inputs input"),
+            button = document.querySelector(".button input"),
+            phoneNumberInput = document.getElementById("phone-number"),
+            passwordInput = document.getElementById("password"),
+            confirmPasswordInput = document.getElementById("confirm-password");
+
+        // OTP input logic
+        inputs.forEach((input, index1) => {
+            input.addEventListener("keyup", (e) => {
+                const currentInput = input,
+                    nextInput = input.nextElementSibling,
+                    prevInput = input.previousElementSibling;
+
+                if (currentInput.value.length > 1) {
+                    currentInput.value = "";
+                    return;
+                }
+                if (nextInput && nextInput.hasAttribute("disabled") && currentInput.value !== "") {
+                    nextInput.removeAttribute("disabled");
+                    nextInput.focus();
+                }
+                if (e.key === "Backspace") {
+                    inputs.forEach((input, index2) => {
+                        if (index1 <= index2 && prevInput) {
+                            input.setAttribute("disabled", true);
+                            input.value = "";
+                            prevInput.focus();
+                        }
+                    });
+                }
+
+                // If OTP is fully entered
+                if (!inputs[3].disabled && inputs[3].value !== "") {
+                    button.removeAttribute("disabled");
+                    button.classList.add("active");
+
+                    // OTP completed notification
+                    setTimeout(() => {
+                        alert("Authentication completed.");
+                        
+                        // Enable password fields
+                        passwordInput.removeAttribute("disabled");
+                        confirmPasswordInput.removeAttribute("disabled");
+
+                        // Focus on the password input field
+                        passwordInput.focus();
+                    }, 500); // Delay for showing "Authentication completed" after OTP is fully entered
+                    return;
+                }
+                button.classList.remove("active");
+            });
+        });
+
+        // Simulate OTP send notification
+        phoneNumberInput.addEventListener("blur", () => {
+            if (phoneNumberInput.value.length > 0) {
+                alert("OTP has been sent to your phone number.");
+
+                // Enable the first OTP input after a delay
+                setTimeout(() => {
+                    inputs[0].removeAttribute("disabled");
+                    inputs[0].focus();
+                }, 1000); // Simulate a 1-second delay for OTP send
+            }
+        });
+
+        window.addEventListener("load", () => inputs[0].setAttribute("disabled", true));
+    </script>
+</body>
+</html>

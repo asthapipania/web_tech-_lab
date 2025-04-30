@@ -1,0 +1,254 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', 'sans-serif';
+}
+
+header {
+    background-image: url(images/image2.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 150px;
+    position: relative;
+}
+
+.overlay {
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    height: 100%;
+    right: 0;
+    bottom: 0;
+    padding: 0 !important;
+    margin: 0 !important;
+    background-color: rgba(10, 10, 10, 0.3);
+}
+
+nav {
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 50px 60px 0 60px;
+}
+
+nav li {
+    list-style: none;
+    display: inline-block;
+    padding-right: 10px;
+    padding-left: 10px;
+    border-radius: 10px;
+}
+
+nav h1 {
+    color: #fff; /* Change the color to your desired color */
+}
+
+nav li span {
+    padding-left: 5px;
+}
+
+li a {
+    padding: 5px;
+    background-color: #fff;
+    text-decoration: none;
+}
+
+.cart ion-icon {
+    vertical-align: bottom;
+    font-size: 20px;
+    padding-right: 5px;
+}
+
+.cart a {
+    background-color: #3897f0;
+    color: #fff;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.container, .products-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 50px;
+    padding-bottom: 100px;
+}
+
+.image {
+    margin-right: 20px;
+    margin-left: 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+.add-cart {
+    position: absolute;
+    border-radius: 8px;
+    color: black;
+    width: 100%;
+    background-color: darkgray;
+    transition: all 0.3s ease-in-out;
+    opacity: 0;
+    cursor: pointer;
+    text-align: center;
+}
+
+.image:hover .add-cart {
+    bottom: 50px;
+    opacity: 1;
+    padding: 10px;
+    text-decoration: none;
+}
+
+.acimg {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Cart page */
+.products-container {
+    max-width: 650px;
+    justify-content: space-around;
+    margin: 0 auto;
+    margin-top: 50px;
+}
+
+.products-container ion-icon {
+    font-size: 20px;
+    color: blue;
+    margin-left: 10px;
+    margin-right: 10px;
+    cursor: pointer;
+    position: relative;
+    top: 35%;
+}
+
+.product-header {
+    width: 85%;
+    max-width: 650px;
+    display: flex;
+    justify-content: flex-start;
+    border-bottom: 4px solid lightgray;
+    margin: 0 auto;
+}
+
+.product-title {
+    width: 45%;
+}
+
+.price, .quantity, .total {
+    width: 20%;
+    border-bottom: 1px solid lightgray;
+    display: flex;
+    align-items: center;
+}
+
+.product {
+    width: 45%;
+    border-bottom: 1px solid lightgray;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+}
+
+.product ion-icon {
+    cursor: pointer;
+}
+
+.products {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.products img {
+    width: 75px;
+}
+
+.basketTotalContainer {
+    display: flex;
+    width: 100%;
+    padding: 10px 0;
+    position: relative;
+    left: 47%;
+}
+
+.basketTotalTitle {
+    width: 30%;
+}
+
+.basketTotal {
+    width: 10%;
+}
+
+.others {
+    position: relative;
+    left: 47%;
+    top: -15%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.other {
+    position: relative;
+    left: 55%;
+    top: -15%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.name {
+    display: flex;
+    align-items: center;
+}
+
+/* Antique theme colors */
+:root {
+    --entique-brown: #0886c9; /* Warm, earthy brown */
+    --entique-gold: #3897f0;  /* Antique gold */
+    --entique-cream: #f5f1e6; /* Creamy background */
+}
+
+/* Style for the checkout section */
+.checkout-box {
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    margin-top: 20px; /* Add some space above */
+    padding: 20px; /* Optional padding */
+    width: 100%; /* Full width */
+}
+
+.checkout-section {
+    text-align: center; /* Center text inside the section */
+}
+
+.checkout-btn {
+    padding: 12px 24px; /* Larger padding for a premium feel */
+    background-color: var(--entique-brown); /* Antique brown */
+    color: var(--entique-cream); /* Creamy white text */
+    border: 2px solid var(--entique-gold); /* Gold border */
+    border-radius: 8px; /* Rounded edges */
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    font-family: 'Georgia', serif; /* Classic font for antique feel */
+}
+
+/* Hover effect for the button */
+.checkout-btn:hover {
+    background-color: var(--entique-gold); /* Antique gold on hover */
+    color: var(--entique-brown); /* Swap text color to brown */
+    transform: translateY(-3px); /* Slight lift on hover */
+}

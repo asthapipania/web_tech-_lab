@@ -1,0 +1,260 @@
+/* Reset default styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Global styles */
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #FDE3E1;
+  color: #333;
+}
+
+.auction-container {
+  max-width: 900px;
+  margin: 40px auto;
+  background-color: white;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
+  animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+h1 {
+  font-size: 36px;
+  text-align: center;
+  color: #D85864;
+  margin-bottom: 20px;
+}
+
+.auction-item h2 {
+  font-size: 28px;
+  color: #333;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.auction-item img {
+  display: block;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 400px;
+  border-radius: 10px;
+  transition: transform 0.3s;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.auction-item img:hover {
+  transform: scale(1.05);
+}
+
+.auction-item h4 {
+  text-align: center;
+  font-size: 22px;
+  color: #444;
+  margin: 20px 0 10px;
+}
+
+.auction-item h5 {
+  font-size: 18px;
+  line-height: 1.5;
+  text-align: center;
+  color: #666;
+  margin-bottom: 20px;
+}
+
+.bid-section {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.bid-section label {
+  font-size: 18px;
+  font-weight: bold;
+  color: #555;
+}
+
+.bid-section input[type="number"] {
+  padding: 10px;
+  font-size: 16px;
+  border: 2px solid #ddd;
+  border-radius: 5px;
+  width: 120px;
+  margin-left: 10px;
+  transition: border-color 0.3s;
+}
+
+.bid-section input[type="number"]:focus {
+  border-color: #D85864;
+}
+
+.bid-section button {
+  padding: 10px 30px;
+  font-size: 16px;
+  background-color: #D85864;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-left: 10px;
+  transition: background-color 0.3s;
+}
+
+.bid-section button:hover {
+  background-color: #FF6B6B;
+}
+
+.highest-bid {
+  font-size: 20px;
+  margin-top: 25px;
+  text-align: center;
+  color: #333;
+}
+
+.highest-bid span {
+  font-weight: bold;
+  color: #D85864;
+}
+
+.timer {
+  font-size: 24px;
+  color: #D85864;
+  text-align: center;
+  margin-top: 30px;
+}
+
+.timer span {
+  font-weight: bold;
+}
+
+/* Button animation */
+.bid-section button {
+  position: relative;
+  overflow: hidden;
+}
+
+.bid-section button::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 300%;
+  height: 300%;
+  background: rgba(255, 255, 255, 0.2);
+  transition: all 0.75s cubic-bezier(0.25, 1, 0.5, 1);
+  transform: translate(-50%, -50%) scale(0);
+  border-radius: 50%;
+}
+
+.bid-section button:hover::before {
+  transform: translate(-50%, -50%) scale(1);
+}
+new css
+html,
+body {
+    height: 100%;
+}
+
+.carousel,
+.item,
+.active {
+    height: 100%;
+}
+
+.carousel-inner {
+  height: 100%;
+  background: #3897f0;
+}
+
+.carousel-caption {
+  padding-bottom: 80px;
+}
+
+h2 {
+  font-size: 60px;
+}
+
+p {
+  padding: 10px;
+}
+
+/* Background images are set within the HTML using inline CSS, not here */
+.fill {
+    height: 100vh; /* This makes the div take the full height of the viewport */
+    width: 100vw;  /* This makes the div take the full width of the viewport */
+    background-size: cover; /* Ensures the image covers the entire div */
+    background-position: center; /* Centers the image within the div */
+    background-repeat: no-repeat; /* Prevents repeating the image */
+}
+
+/**
+ * Button
+ */
+.btn-transparent {
+  background-color: #3897f0; /* Always blue background */
+  color: white; /* White text initially */
+  border: 2px solid #3897f0; /* Blue border */
+  padding: 11px 45px;
+  font-size: 18px;
+  border-radius: 70px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.btn-transparent:hover,
+.btn-transparent:focus,
+.btn-transparent:active {
+  background-color: #3897f0; /* Blue background remains */
+  color: white; /* Text stays white */
+  outline: none; /* Removes focus outline */
+}
+
+/**
+ * Change animation duration
+ */
+.animated {
+  -webkit-animation-duration: 1.5s;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fadeInRight {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(100px, 0, 0);
+    transform: translate3d(100px, 0, 0);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none;
+  }
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(100px, 0, 0);
+    transform: translate3d(100px, 0, 0);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none;
+  }
+}
+
+.fadeInRight {
+  -webkit-animation-name: fadeInRight;
+  animation-name: fadeInRight;
+}
+

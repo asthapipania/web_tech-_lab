@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <title>Geolocation and Reverse Geocoding</title>
+</head>
+
+<body>
+    <h1>Find Your Location</h1>
+    <p id="location">Fetching location...</p>
+
+    <!-- Include Google Maps API with your API key -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places"></script>
+
+    <script>
+        // Function to display the reverse-geocoded address
+        function displayLocation(latitude, longitude) {
+            var latlng = new google.maps.LatLng(latitude, longitude);
+            var geocoder = new google.maps.Geocoder();
+
+            geocoder.geocode({ 'location': latlng }, function(results, status) {
+                if (status === google.maps.GeocoderStatus.OK) {
+                    if (results[0]) {
+                        // Get the formatted address from the reverse geocode result
+                        var address = results[0].formatted_address;
+                        // Display the address on the web page
+                        document.getElementById("location").textContent = "Your location: " + address;
+                        console.log("Address: " + address);
+                    } else {
+                        document.getElementById("location").textContent = "No results found";
+                        console.log("No results found");
+                    }
+                } else {
+                    document.getElementById("location").textContent = "Geocoder failed due to: " + status;
+                    console.log("Geocoder failed due to: " + status);
+                }
+            });
+        }
+
+        // Function to fetch the user's current location using the browser's Geolocation API
+        function fetchLocation() {
+            if (navigator.geolocation) {
+                // If geolocation is supported, get the user's current position
+                navigator.geolocation.getCurrentPosition(
+                    function (position) {
+                        var latitude = position.coords.latitude;
+                        var longitude = position.coords.longitude;
+
+                        console.log("Latitude: " + latitude);
+                        console.log("Longitude: " + longitude);
+
+                        // Call the displayLocation function to reverse geocode the coordinates
+                        displayLocation(latitude, longitude);
+                    },
+                    function (error) {
+                        document.getElementById("location").textContent = "Error fetching location: " + error.message;
+                        console.log("Error: " + error.message);
+                    }
+                );
+            } else {
+                // If geolocation is not supported, show an error message
+                document.getElementById("location").textContent = "Geolocation is not supported by this browser.";
+            }
+        }
+
+        // Fetch the location when the page loads
+        window.onload = fetchLocation;
+    </script>
+</body>
+</html>

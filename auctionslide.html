@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carousel Slide</title>
+    <link rel="stylesheet" href="auctionslide.css"> <!-- Linking CSS file -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> <!-- Bootstrap CSS -->
+</head>
+<body>
+
+<!-- Full Page Image Background Carousel Header -->
+<div id="myCarousel" class="carousel slide" data-ride="carousel">
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+        <li data-target="#myCarousel" data-slide-to="1"></li>
+        <li data-target="#myCarousel" data-slide-to="2"></li>
+    </ol>
+
+    <!-- Wrapper for Slides -->
+    <div class="carousel-inner">
+        <!-- Slide 1 -->
+        <div class="item active">
+            <div class="fill" style="background-image: url('AUCTION_IMG1.png');"></div>
+            <div class="carousel-caption">
+                <h2 class="animated fadeInDown"></h2>
+                <p class="animated fadeInUp"></p>
+                <p class="animated fadeInUp">
+                    <a href="#" class="btn btn-transparent btn-rounded btn-large" id="learn-more-1">Learn More</a>
+                </p>
+            </div>
+        </div>
+
+        <!-- Slide 2 -->
+        <div class="item">
+            <div class="fill" style="background-image: url('antiquE_2.png');"></div>
+            <div class="carousel-caption">
+                <h2 class="animated fadeInDown"></h2>
+                <p class="animated fadeInUp"></p>
+                <p class="animated fadeInUp">
+                    <a href="#" class="btn btn-transparent btn-rounded btn-large" id="learn-more-2">Learn More</a>
+                </p>
+            </div>
+        </div>
+
+        <!-- Slide 3 -->
+        <div class="item">
+            <div class="fill" style="background-image: url('antique_3.png');"></div>
+            <div class="carousel-caption">
+                <h2 class="animated fadeInDown"></h2>
+                <p class="animated fadeInRight"></p>
+                <p class="animated fadeInRight">
+                    <a href="#" class="btn btn-transparent btn-rounded btn-large" id="learn-more-3">Learn More</a>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Controls -->
+    <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+        <span class="icon-prev"></span>
+    </a>
+    <a class="right carousel-control" href="#myCarousel" data-slide="next">
+        <span class="icon-next"></span>
+    </a>
+</div>
+
+<!-- Auction items for each slide -->
+<!-- Paintings (for Slide 1) -->
+<div class="auction-section" id="paintings-section" style="display: block;">
+    <h3 style="text-align: center; font-size: 24px; color: #333;">Paintings for Auction</h3>
+    <div class="item-list" style="display: flex; justify-content: center; gap: 20px;">
+        <!-- Painting 1 -->
+        <div class="item" style="width: 200px; height: 350px; background-color: #f4f4f4; display: flex; flex-direction: column; align-items: center; justify-content: center; border: 1px solid #ccc;">
+            <!-- Image -->
+            <img src="painting1.jpg" alt="Painting 1" style="width: 100%; height: 200px; object-fit: cover; border-bottom: 1px solid #ccc;">
+            <!-- Description -->
+            <p style="font-size: 14px; color: #777; text-align: center; margin-top: 10px;">A beautiful landscape painting from the 19th century.</p>
+            <p style="font-size: 12px; color: #555; text-align: center;">Dimensions: 24" x 36"<br>Origin: Mughal Era<br>Starting Bid: ₹2500</p>
+        </div>
+
+        <!-- Painting 2 -->
+        <div class="item" style="width: 200px; height: 350px; background-color: #f4f4f4; display: flex; flex-direction: column; align-items: center; justify-content: center; border: 1px solid #ccc;">
+            <!-- Image -->
+            <img src="painting2.jpeg" alt="Painting 2" style="width: 100%; height: 200px; object-fit: cover; border-bottom: 1px solid #ccc;">
+            <!-- Description -->
+            <p style="font-size: 14px; color: #777; text-align: center; margin-top: 10px;">A serene depiction of the indian culture in oil.</p>
+            <p style="font-size: 12px; color: #555; text-align: center;">Dimensions: 20" x 30"<br>Origin: British Raj<br>Starting Bid: ₹3000</p>
+        </div>
+
+        <!-- Painting 3 -->
+        <div class="item" style="width: 200px; height: 350px; background-color: #f4f4f4; display: flex; flex-direction: column; align-items: center; justify-content: center; border: 1px solid #ccc;">
+            <!-- Image -->
+            <img src="painting3.jpeg" alt="Painting 3" style="width: 100%; height: 200px; object-fit: cover; border-bottom: 1px solid #ccc;">
+            <!-- Description -->
+            <p style="font-size: 14px; color: #777; text-align: center; margin-top: 10px;">An abstract work exploring vibrant colors.</p>
+            <p style="font-size: 12px; color: #555; text-align: center;">Dimensions: 30" x 40"<br>Origin: Gupta Dynasty<br>Starting Bid: ₹4500</p>
+        </div>
+    </div>
+</div>
+
+<!-- Pottery (for Slide 2) -->
+<div class="auction-section" id="pottery-section" style="display: none;">
+    <h3></h3>
+  
+        <h3 style="text-align: center; font-size: 24px; color: #333;">Pottery for Auction</h3>
+        <div class="item-list" style="display: flex; justify-content: center; gap: 20px;">
+            <!-- Painting 1 -->
+            <div class="item" style="width: 200px; height: 350px; background-color: #f4f4f4; display: flex; flex-direction: column; align-items: center; justify-content: center; border: 1px solid #ccc;">
+                <!-- Image -->
+                <img src="pottery1.jpeg" alt="Painting 1" style="width: 100%; height: 200px; object-fit: cover; border-bottom: 1px solid #ccc;">
+                <!-- Description -->
+                <p style="font-size: 14px; color: #777; text-align: center; margin-top: 10px;">A beautiful handmade pottery from the 19th century.</p>
+                <p style="font-size: 12px; color: #555; text-align: center;">Dimensions: 24" x 36"<br>Origin: Mughal Era<br>Starting Bid: ₹3500</p>
+            </div>
+    
+            <!-- Painting 2 -->
+            <div class="item" style="width: 200px; height: 350px; background-color: #f4f4f4; display: flex; flex-direction: column; align-items: center; justify-content: center; border: 1px solid #ccc;">
+                <!-- Image -->
+                <img src="pottery2.jpeg" alt="Painting 2" style="width: 100%; height: 200px; object-fit: cover; border-bottom: 1px solid #ccc;">
+                <!-- Description -->
+                <p style="font-size: 14px; color: #777; text-align: center; margin-top: 10px;">A serene hand crafted mud pottery with beautiful Painting.</p>
+                <p style="font-size: 12px; color: #555; text-align: center;">Dimensions: 20" x 30"<br>Origin: British Raj<br>Starting Bid: ₹3500</p>
+            </div>
+    
+            <!-- Painting 3 -->
+            <div class="item" style="width: 200px; height: 350px; background-color: #f4f4f4; display: flex; flex-direction: column; align-items: center; justify-content: center; border: 1px solid #ccc;">
+                <!-- Image -->
+                <img src="pottery3.jpeg" alt="Painting 3" style="width: 100%; height: 200px; object-fit: cover; border-bottom: 1px solid #ccc;">
+                <!-- Description -->
+                <p style="font-size: 14px; color: #777; text-align: center; margin-top: 10px;">An abstract work exploring vibrant color and very unique patterns.</p>
+                <p style="font-size: 12px; color: #555; text-align: center;">Dimensions: 30" x 40"<br>Origin: Gupta Dynasty<br>Starting Bid: ₹4500</p>
+            </div>
+        </div>
+    </div>
+    
+
+
+
+ <!-- Furniture (for Slide 3) -->
+ <div class="auction-section" id="furniture-section" style="display: none;">
+    <h3 style="text-align: center; font-size: 24px; color: #333;">Furnitures for Auction</h3>
+    <div class="item-list" style="display: flex; justify-content: center; gap: 20px;">
+        <!-- Painting 1 -->
+        <div class="item" style="width: 200px; height: 350px; background-color: #f4f4f4; display: flex; flex-direction: column; align-items: center; justify-content: center; border: 1px solid #ccc;">
+            <!-- Image -->
+            <img src="furniture1.jpg" alt="Painting 1" style="width: 100%; height: 200px; object-fit: cover; border-bottom: 1px solid #ccc;">
+            <!-- Description -->
+            <p style="font-size: 14px; color: #777; text-align: center; margin-top: 10px;">A beautiful book case from the 19th century .</p>
+            <p style="font-size: 12px; color: #555; text-align: center;">Dimensions: 24" x 36"<br>Origin: Mughal Era<br>Starting Bid: ₹5000</p>
+        </div>
+
+        <!-- Painting 2 -->
+        <div class="item" style="width: 200px; height: 350px; background-color: #f4f4f4; display: flex; flex-direction: column; align-items: center; justify-content: center; border: 1px solid #ccc;">
+            <!-- Image -->
+            <img src="furniture2.webp" alt="Painting 2" style="width: 100%; height: 200px; object-fit: cover; border-bottom: 1px solid #ccc;">
+            <!-- Description -->
+            <p style="font-size: 14px; color: #777; text-align: center; margin-top: 10px;">A pretty and wooden made majestic chair with engraved arts.</p>
+            <p style="font-size: 12px; color: #555; text-align: center;">Dimensions: 20" x 30"<br>Origin: British Raj<br>Starting Bid: ₹5600</p>
+        </div>
+
+        <!-- Painting 3 -->
+        <div class="item" style="width: 200px; height: 350px; background-color: #f4f4f4; display: flex; flex-direction: column; align-items: center; justify-content: center; border: 1px solid #ccc;">
+            <!-- Image -->
+            <img src="furniture3.jpg" alt="Painting 3" style="width: 100%; height: 200px; object-fit: cover; border-bottom: 1px solid #ccc;">
+            <!-- Description -->
+            <p style="font-size: 14px; color: #777; text-align: center; margin-top: 10px;">A beautiful weaved seat with wooden touch and beautiful floral carvings all around.</p>
+            <p style="font-size: 12px; color: #555; text-align: center;">Dimensions: 30" x 40"<br>Origin: Gupta Dynasty<br>Starting Bid: ₹4500</p>
+        </div>
+    </div>
+</div>
+
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<script>
+    // Switch auction items based on the active slide
+    $('#myCarousel').on('slid.bs.carousel', function () {
+        const activeIndex = $('.carousel-inner .item.active').index();
+        $('.auction-section').hide();
+        if (activeIndex === 0) {
+            $('#paintings-section').fadeIn();
+        } else if (activeIndex === 1) {
+            $('#pottery-section').fadeIn();
+        } else if (activeIndex === 2) {
+            $('#furniture-section').fadeIn();
+        }
+    });
+
+    // Event dates
+    const eventDates = {
+        event1: new Date('2024-12-06T17:00:00').getTime(), // Dec 6, 2024, 5:00 PM
+        event2: new Date('2024-10-05T17:00:00').getTime(), // Oct 5, 2024, 5:00 PM
+    };
+
+    // Calculate remaining time
+    function calculateTimeLeft(eventTime) {
+        const now = new Date().getTime();
+        const timeLeft = eventTime - now;
+        const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+        return `${days} days, ${hours} hours, ${minutes} minutes, and ${seconds} seconds left!`;
+    }
+
+    // Display notification for Event 1 (Dec 6)
+    document.getElementById('learn-more-1').addEventListener('click', function() {
+        const currentDate = new Date().getTime();
+        alert(currentDate < eventDates.event1 ? 'Event 1 starts in ' + calculateTimeLeft(eventDates.event1) : 'Event 1 has already started or passed.');
+    });
+
+    // Display notification for Event 2 (Oct 5)
+    document.getElementById('learn-more-2').addEventListener('click', function() {
+        const currentDate = new Date().getTime();
+        alert(currentDate < eventDates.event2 ? 'Event 2 starts in ' + calculateTimeLeft(eventDates.event2) : 'Event 2 has already started or passed.');
+    });
+
+    // Display notification for Event 3 (It's live now!)
+    document.getElementById('learn-more-3').addEventListener('click', function() {
+        if (confirm("It's live now! Do you want to Bid Now?")) {
+            window.location.href = 'auction.html'; // Redirect to auction.html
+        }
+    });
+</script>
+
+</body>
+</html>

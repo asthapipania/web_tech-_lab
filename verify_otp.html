@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Verify OTP</title>
+  <style>
+    /* (CSS remains the same as the previous code you provided) */
+  </style>
+</head>
+<body>
+  <h1>Verify OTP</h1>
+  <form id="verifyOTPForm">
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" required readonly>
+    <label for="otp">OTP:</label>
+    <input type="text" id="otp" name="otp" required>
+    <button type="submit">Verify OTP</button>
+  </form>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const verifyOTPForm = document.getElementById('verifyOTPForm');
+      const emailInput = verifyOTPForm.elements.email;
+
+      // Populate email from localStorage
+      const email = localStorage.getItem('email');
+      if (email) {
+        emailInput.value = email;
+      } else {
+        alert('Email not found, please go back and send OTP again.');
+        window.location.href = 'sendOTP.html';
+      }
+
+      if (verifyOTPForm) {
+        verifyOTPForm.addEventListener('submit', async (e) => {
+          e.preventDefault();
+          const otp = verifyOTPForm.elements.otp.value;
+          
+          // API to verify OTP
+          const response = await fetch(`/api/verifyOTP?email=${encodeURIComponent(email)}&otp=${encodeURIComponent(otp)}`);
+          const result = await response.json();
+          
+          alert(result.message);
+          
+          if (result.success) {
+            window.location.href = 'success.html';
+          }
+        });
+      }
+    });
+  </script>
+</body>
+</html>

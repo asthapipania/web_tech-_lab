@@ -1,0 +1,16 @@
+*.log
+*.ini
+*.lnk
+*.docx
+.DS_Store
+.vscode/
+node_modules/
+.cache/
+*.exe
+*.pdf
+*.png
+*.jpg
+*.gif
+AppData/
+Downloads/
+

@@ -1,0 +1,138 @@
+/* Reset default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Global styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #FDE3E1;
+    color: #333;
+}
+
+/* Header styles */
+header {
+    position: relative;
+    background-color: #D85864; /* Header background color */
+    padding: 20px 0; /* Padding for the header */
+}
+
+nav {
+    max-width: 900px; /* Max width for the nav */
+    margin: 0 auto; /* Centering the nav */
+    display: flex; /* Flexbox for horizontal alignment */
+    justify-content: space-between; /* Space between items */
+    align-items: center; /* Center items vertically */
+}
+
+nav h1 {
+    color: white; /* White text for the title */
+    font-size: 24px; /* Title font size */
+}
+
+ul {
+    list-style: none; /* Remove bullet points */
+    display: flex; /* Horizontal list */
+}
+
+li {
+    margin: 0 15px; /* Margin between list items */
+}
+
+a {
+    text-decoration: none; /* Remove underline from links */
+    color: white; /* White link color */
+    font-size: 16px; /* Link font size */
+    transition: color 0.3s; /* Smooth color transition */
+}
+
+a:hover {
+    color: #FFD700; /* Gold color on hover */
+}
+
+/* Auction container styles */
+.auction-container {
+    max-width: 900px; /* Max width for the container */
+    margin: 40px auto; /* Centering the container */
+    background-color: white; /* White background for auction */
+    padding: 30px; /* Padding for the container */
+    border-radius: 15px; /* Rounded corners */
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1); /* Soft shadow */
+    animation: fadeIn 1s ease-in-out; /* Fade-in effect */
+}
+
+/* Auction item styles */
+.auction-item {
+    margin-bottom: 30px; /* Space between items */
+}
+
+.auction-item img {
+    display: block; /* Center the image */
+    margin: 0 auto; /* Centering the image */
+    width: 100%; /* Full width */
+    max-width: 400px; /* Max width for images */
+    border-radius: 10px; /* Rounded corners for images */
+    transition: transform 0.3s; /* Image scale effect */
+}
+
+.auction-item img:hover {
+    transform: scale(1.05); /* Scale up on hover */
+}
+
+.auction-item h2 {
+    font-size: 24px; /* Title font size */
+    color: #D85864; /* Title color */
+    text-align: center; /* Centering title */
+    margin: 15px 0; /* Margin above and below */
+}
+
+.auction-item h4 {
+    text-align: center; /* Centering description */
+    font-size: 20px; /* Description font size */
+}
+
+.auction-item h5 {
+    font-size: 16px; /* Details font size */
+    line-height: 1.5; /* Line spacing */
+    text-align: center; /* Centering details */
+    color: #666; /* Grey color for details */
+}
+
+/* Bid section styles */
+.bid-section {
+    text-align: center; /* Centering bid section */
+    margin: 20px 0; /* Margin above and below */
+}
+
+input[type="number"] {
+    padding: 10px; /* Padding for input */
+    border: 1px solid #ccc; /* Border for input */
+    border-radius: 5px; /* Rounded corners for input */
+    width: 80%; /* Width of the input */
+    max-width: 300px; /* Max width for input */
+}
+
+button {
+    background-color: #D85864; /* Button background color */
+    color: white; /* Button text color */
+    border: none; /* Remove border */
+    border-radius: 5px; /* Rounded corners */
+    padding: 10px 20px; /* Padding for button */
+    cursor: pointer; /* Pointer on hover */
+    margin-top: 10px; /* Space above button */
+    transition: background-color 0.3s; /* Smooth transition */
+}
+
+button:hover {
+    background-color: #B63D48; /* Darker red on hover */
+}
+
+/* Timer styles */
+.timer {
+    text-align: center; /* Centering timer */
+    font-size: 18px; /* Font size for timer */
+    margin-top: 20px; /* Margin above timer */
+    color: #D85864; /* Timer color */
+}
